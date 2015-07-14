@@ -1,0 +1,19 @@
+* {
+	margin : 0;
+}
+
+.search-button {
+	width: 200px;
+	color: #ee2233;
+	font: 24px bold;
+	margin: 5px;
+} 
+
+.search-input {
+	width: 200px;
+	margin: 5px;
+}
+
+form {
+	width: 300px;
+}
