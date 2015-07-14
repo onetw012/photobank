@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public')); 
 app.use(session({
-	secret: 'flow',
+	secret: 'one',
 	resave: false, 
 	saveUninitialized: false,
 	cookie: {

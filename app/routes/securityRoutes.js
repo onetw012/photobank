@@ -36,7 +36,7 @@ var User = {};
 
 
 	app.get('/api/get-user', function (req, res) {
-		res.json(req.session.user);
+		res.json(User);
 	});
 
 	app.get('/albums', function (req, res, next) {
@@ -66,8 +66,7 @@ var User = {};
 	  passport.authenticate('flickr', {failureRedirect: '/' }),
 	  function(req, res) {
 	    // Successful authentication, redirect home.
-	    req.session.user = req.user;
-	    console.log(req.session.user);
+	    req.session.user = req.user;	   
 	    res.redirect('/albums');
 	  });
 

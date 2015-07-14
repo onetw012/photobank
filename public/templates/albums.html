@@ -9,15 +9,17 @@
 <body ng-app="photobank">
 	<div ng-controller="albumController">
 	<a href="/logout">Logout</a>
-	<form novalidate>	
-		<input class="search-input" type="text" ng-model="term">
-		<button class="search-button" ng-click="search(term)">Search</button>
-	</form>
+	<h2>{{greeting}}</h2>
+<!-- 	<form novalidate>	
+	<input class="search-input" type="text" ng-model="term">
+	<button class="search-button" ng-click="search(term)">Search</button>
+</form> -->
 
 
-	<div class="photo" ng-repeat="img in result.photos.photo">
-		<h2>{{img.title}}</h2>
-		<img ng-src="https://farm{{img.farm}}.staticflickr.com/{{img.server}}/{{img.id}}_{{img.secret}}_m.jpg" alt=""></img>
+	<div class="photo" ng-repeat="photoset in result.photosets.photoset">
+		<h2>{{photoset.title._content}}</h2>
+		<img ng-src="" alt=""></img>
+		<h4>{{photoset.description._content}}</h4>
 	</div>
 	</div>
 
