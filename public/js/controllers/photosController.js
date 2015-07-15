@@ -17,6 +17,7 @@
 				.then(function (data) {
 					//save photos
 					$scope.result = data;
+					console.log($scope.result);
 				});
 				
 

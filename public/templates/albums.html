@@ -4,14 +4,35 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>Photobank</title>
+	<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
+
 </head>
 <body ng-app="photobank">
-<a href="/logout">Logout</a>
-	<a ui-sref="albums">Go</a>
-<div ui-view>
+<nav class="navbar navbar-fixed-top topnav header" role="navigation">
+	<div class="container-fluid topnav">
+		<div class="navbar-header">
+		  <a class="navbar-brand header-brand" ui-sref="albums">
+		    <img alt="Brand" src="./img/logo.png">		    
+		  </a>
+		</div>
+		<ul class="nav nav-pills navbar-nav navbar-left">
+			<li role="presentation" class="active"><a ui-sref="albums">Albums</a></li>
+		</ul>
+		<ul class="nav nav-pills navbar-nav navbar-right">
+			<li role="presentation"><a href="/logout">Logout</a></li>
+		</ul>
+	</div>
+</nav>
+
+
+	
+<div class="container photosets" ui-view>
 	
 </div>
+
+	<div class="footer"></div>
+
 
 	<!-- Add all scripts -->
 	<script src="libs/angular/angular.min.js"></script>
