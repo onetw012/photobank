@@ -2,7 +2,7 @@
 
 var passport = require('passport'),
 	FlickrStrategy = require('passport-flickr').Strategy,
-	ids = require('./../app/oauth'),
+	ids = require('./oauth.js'),
 	path = require('path');
 
 module.exports = function (app) {
