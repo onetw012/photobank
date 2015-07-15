@@ -1,0 +1,6 @@
+<div>
+	<h1>{{result.photoset.title}}</h1>
+	<div ng-repeat="photo in result.photoset.photo">
+		<img ng-src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}.jpg" alt="">
+	</div>
+</div>

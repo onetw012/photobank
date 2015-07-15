@@ -1,5 +1,7 @@
 ;(function () {
 	'use strict';
 
-	angular.module('photobank', []);
+	angular.module('photobank', [
+			'ui.router'
+		]);
 })();
