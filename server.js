@@ -9,7 +9,7 @@ var express = require('express'),
 	securityRoutes = require('./app/routes/securityRoutes');
 
 
-var port = process.env.PORT || 4444;
+var port = Number(process.env.PORT || 4444);
 
 
 app.use(cookieParser());
