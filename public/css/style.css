@@ -3,13 +3,11 @@
 	padding: 0px;
 }
 
-html {
-	margin-top: 50px;
-}
 
 html, body{
-	height: 94%; */	
+	height: 95%; 
 }
+
 
 hr {
  border: none;
@@ -17,6 +15,8 @@ hr {
  background-color: #337ab7; 
  height: 2px;
 }
+
+/* Header */
 
 .header {
 	background: url('../img/gray_jean.png') repeat;
@@ -31,9 +31,10 @@ hr {
 	margin: 0 15px;	
 }
 
+/* Photoset */
 .photosets {
 	height: 100%;
-	min-height: 100%;
+	margin: 50px auto -50px;
 	background-color: #eee;
 	padding: 25px;
 	text-align: center;
@@ -82,7 +83,6 @@ hr {
 }
 
 .photoset p {
-	height: 100px;
 	overflow: hidden;
 	padding: 5px;
 	color: #282828;
@@ -92,6 +92,7 @@ hr {
 	text-decoration: none;
 }
 
+/* Photo */
 .photos {
 	color: #fff;
 }
@@ -100,6 +101,7 @@ hr {
 	display: inline-block;
 	width: 350px;
 	margin: 10px;
+	max-height: 300px;
 	position: relative;
 	overflow: hidden;
 	border-radius: 5%;
@@ -108,6 +110,7 @@ hr {
 }
 .photo img {
 	width: 350px;
+	max-height: 300px;
 }
 
 .photo:after {
@@ -136,12 +139,13 @@ hr {
 	transition: all 1.5s;
 }
 
-
+/* Footer */
 .footer {
 	width: 100%;
-	position: absolute;
+	position: fixed;
 	bottom: 0px;
 	height: 50px;
+	margin: auto;
 	background: url('../img/gray_jean.png') repeat;
 
 	box-shadow: 2px 0 3px rgba(0, 0, 0, .25);
@@ -150,11 +154,46 @@ hr {
 }
 
 /* Tooltip */
+/* .my-tooltip {
+	width: 300px;
+	height: 100px;
+	background-color: #444;
+	position: relative;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
 
-
+.my-tooltip:after {
+	content: attr(title);
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-top: 10px solid #444;
+	border-right: 10px solid transparent;
+	border-left: 10px solid transparent;
+	bottom: -10px;
+	left: 140px;
+} */
 /* Media queries */
 
 @media only screen and (max-width: 768px){
+
+	.header {
+		height: 50px;
+	}
+	.photoset {
+		height: 350px;
+		width: 250px;
+	}
+	.photoset img {
+		width: 250px;
+		height: 200px;
+	}
+
+}
+
+@media only screen and (max-width: 500px){
 
 	.header {
 		height: 50px;
@@ -173,4 +212,9 @@ hr {
 	.footer {
 		display: none;
 	}
+}
+
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
 }

@@ -1,8 +1,9 @@
 <div class="photos">
 	<h1>{{result.photoset.title}}</h1>
 	<hr>
-	<div class="photo" ng-repeat="photo in result.photoset.photo" title="{{photo.title}}">
+	<div class="photo" ng-repeat="photo in result.photoset.photo track by $index" data-toggle="tooltip" data-original-title="{{photo.title}}" title="{{photo.title}}" data-placement="top" tooltip data-content="<a href='https://www.flickr.com/photos/{{userID}}/{{photo.id}}' target='_blank'>Watch on Flickr</a>">
 		<img ng-src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}.jpg" alt="{{photo.title}}">
-		<div class="tooltip"></div>
+		
 	</div>
+	
 </div>
