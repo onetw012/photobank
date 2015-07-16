@@ -6,6 +6,7 @@ var express = require('express'),
 	cookieParser = require('cookie-parser'),
 	session = require ('express-session'),
 	passport = require('passport'),
+	favicon = require('serve-favicon'),
 	securityRoutes = require('./app/routes/securityRoutes');
 
 
@@ -27,6 +28,7 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(favicon(__dirname + '/public/img/favicon.ico'));
 
 securityRoutes(app);
 
