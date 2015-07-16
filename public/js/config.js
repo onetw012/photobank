@@ -11,9 +11,9 @@
 			templateUrl: './templates/photosets.html',
 			resolve: {
 				//get user before instantiating controller
-				'User': function (userProvider) {
+				'User': ['userProvider', function (userProvider) {
 					return userProvider.promise;
-				}
+				}]
 			},
 			controller: 'albumController'
 		})
@@ -22,9 +22,9 @@
 			templateUrl: './templates/photos.html',
 			resolve: {
 				//get user before instantiating controller
-				'User': function (userProvider) {
+				'User': ['userProvider', function (userProvider) {
 					return userProvider.promise;
-				}
+				}]
 			},
 			controller: 'photosController'
 		});
