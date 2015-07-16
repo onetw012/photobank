@@ -37,12 +37,17 @@ var User = {};
 
 	app.get('/api/get-user', function (req, res) {
 		res.json(User);
+		res.status(200);
+		res.end();
 	});
 
 	app.get('/albums', function (req, res, next) {
-		req.isAuthenticated()
-		? res.sendFile(path.join(__dirname, '../../public/templates/albums.html'))
-		: res.redirect('/');
+		if(req.isAuthenticated()) {
+			res.sendFile(path.join(__dirname, '../../public/templates/albums.html'));
+			res.status(200);
+		} else {
+			res.redirect('/');
+		}	
 	});
 
 	app.get('/logout', function (req, res) {
@@ -66,8 +71,9 @@ var User = {};
 	  passport.authenticate('flickr', {failureRedirect: '/' }),
 	  function(req, res) {
 	    // Successful authentication, redirect home.
-	    req.session.user = req.user;	   
+	    //req.session.user = req.user;	   
 	    res.redirect('/albums');
+	    res.end();
 	  });
 
 
