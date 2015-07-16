@@ -6,6 +6,7 @@
 		function ($scope, flickrAPI, userProvider, User) {
 
 				var user = User.data;
+				console.log(User.data);
 				$scope.result = [];
 
 				$scope.greeting = "Hello, " + user.profile.fullName + "!";

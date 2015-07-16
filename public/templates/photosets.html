@@ -3,7 +3,7 @@
 		<a ng-repeat="photoset in result.photosets.photoset" class="photoset" ui-sref="album({id: photoset.id})">
 			<h4>{{photoset.title._content}}</h4>
 
-			<img src="https://farm{{photoset.farm}}.staticflickr.com/{{photoset.server}}/{{photoset.primary}}_{{photoset.secret}}.jpg" alt="">
+			<img ng-src="https://farm{{photoset.farm}}.staticflickr.com/{{photoset.server}}/{{photoset.primary}}_{{photoset.secret}}.jpg" alt="">
 			<p>{{photoset.description._content}}</p>
 			<div ui-view></div>
 		</a>

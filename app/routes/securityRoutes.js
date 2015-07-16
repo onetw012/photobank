@@ -20,7 +20,7 @@ var User = {};
 			tokenSecret: tokenSecret,
 			profile: profile
 		};
-		return done(null, profile);
+		return done(null, User);
 	  }
 	));
 
@@ -36,7 +36,8 @@ var User = {};
 
 
 	app.get('/api/get-user', function (req, res) {
-		res.json(User);
+
+		res.json(req.session.passport.user);
 		res.status(200);
 		res.end();
 	});
@@ -55,25 +56,18 @@ var User = {};
 		res.redirect('/');
 	});
 
-/*	app.route('/')
-		.get(function (req, res) {
-			res.send('<a href="/auth/flickr">Log In with Flickr</a>');
-		});*/
-
 	app.get('/auth/flickr',
 	  passport.authenticate('flickr'),
 	  function(req, res){
-	    // The request will be redirected to Flickr for authentication, so this
-	    // function will not be called.
+
 	  });
 
 	app.get('/auth/flickr/callback', 
 	  passport.authenticate('flickr', {failureRedirect: '/' }),
 	  function(req, res) {
-	    // Successful authentication, redirect home.
-	    //req.session.user = req.user;	   
+
 	    res.redirect('/albums');
-	    res.end();
+	    
 	  });
 
 
