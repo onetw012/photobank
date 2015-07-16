@@ -36,7 +36,6 @@ var User = {};
 
 
 	app.get('/api/get-user', function (req, res) {
-
 		res.json(req.session.passport.user);
 		res.status(200);
 		res.end();
