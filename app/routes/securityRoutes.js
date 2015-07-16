@@ -7,7 +7,7 @@ var passport = require('passport'),
 
 module.exports = function (app) {
 
-var User = {};
+
 
 	passport.use(new FlickrStrategy({
 	    consumerKey: ids.flickr.clientID,
@@ -15,7 +15,7 @@ var User = {};
 	    callbackURL: ids.flickr.callbackURL
 	  },
 	  function(token, tokenSecret, profile, done) {
-		User = {
+		var User = {
 			token: token,
 			tokenSecret: tokenSecret,
 			profile: profile

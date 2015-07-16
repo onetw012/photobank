@@ -19,14 +19,14 @@ var express = require('express'),
 
 var port = Number(process.env.PORT || 4444);
 
- mongoose.connect(uristring);
+/* mongoose.connect(uristring);
  db = mongoose.connection;
  db.on('error', function (err) {
  	console.log('connection error', err);
  });
  db.once('open', function () {
  	console.log('connected to mongoDB.');
- });
+ });*/
 
 app.disable('x-powered-by');
 app.use(cookieParser());
@@ -40,8 +40,8 @@ app.use(session({
 	cookie: {
 		/*maxAge: 3600000,*/
 		secure: false
-	},
-	store: new MongoStore({ mongooseConnection: mongoose.connection })
+	}/*,
+	store: new MongoStore({ mongooseConnection: mongoose.connection })*/
 }));
 app.use(passport.initialize());
 app.use(passport.session());
