@@ -2,7 +2,7 @@
   "name": "photobank",
   "version": "1.0.0",
   "description": "Single Sign-On web page that will show the list of albums of the user with usage of the API of the Flickr",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "bower install"
